@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	/*@Autowired
+	@Autowired
 	private UserDetailsService userDetailsService;
 
 	@Autowired
@@ -20,7 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/**//*favicon*//*.ico", "/css/**", "js/**", "/images/**", "/webjars/**", "/login.html").permitAll()
+				.antMatchers("/**/favicon.ico", "/css/**", "js/**", "/images/**", "/webjars/**", "/login.html").permitAll()
 				.antMatchers("/rest/**").access("hasRole('EDITOR')")
 				.antMatchers("/actuator/**").access("hasRole('ADMIN')")
 				.anyRequest().authenticated();
@@ -35,5 +35,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication().dataSource(dataSource);
-	}*/
+	}
 }
